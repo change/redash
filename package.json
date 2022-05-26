@@ -46,7 +46,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@redash/viz": "file:viz-lib",
-    "ace-builds": "^1.4.12",
+    "ace-builds": "^1.4.14",
     "antd": "^4.20.2",
     "axios": "^0.26.1",
     "axios-auth-refresh": "^3.0.0",
