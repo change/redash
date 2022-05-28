@@ -42,3 +42,4 @@ xlrd==2.0.1
 openpyxl==3.0.7
 firebolt-sqlalchemy
 pyjwt>=2.4.0 # not directly required, pinned by Snyk to avoid a vulnerability
+httpx>=0.23.0 # not directly required, pinned by Snyk to avoid a vulnerability
