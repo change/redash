@@ -79,7 +79,7 @@ def split_sql_statements(query):
         st = sqlparse.engine.FilterStack()
         stmt = next(st.run(str(stmt)))
 
-        sql = sqlparse.text_type(strip_comments.process(stmt))
+        sql = str(strip_comments.process(stmt))
         return sql.strip() == ""
 
     stack = sqlparse.engine.FilterStack()
@@ -88,7 +88,7 @@ def split_sql_statements(query):
     result = [strip_trailing_comments(stmt) for stmt in result]
     result = [strip_trailing_semicolon(stmt) for stmt in result]
     result = [
-        sqlparse.text_type(stmt).strip()
+        str(stmt).strip()
         for stmt in result
         if not is_empty_statement(stmt)
     ]
