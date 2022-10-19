@@ -77,7 +77,7 @@ def split_sql_statements(query):
 
         # copy statement object. `copy.deepcopy` fails to do this, so just re-parse it
         st = sqlparse.engine.FilterStack()
-        stmt = next(st.run(sqlparse.text_type(stmt)))
+        stmt = next(st.run(str(stmt)))
 
         sql = sqlparse.text_type(strip_comments.process(stmt))
         return sql.strip() == ""
