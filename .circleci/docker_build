@@ -4,7 +4,7 @@ VERSION_TAG=$VERSION.b$CIRCLE_BUILD_NUM
 
 docker login -u $DOCKER_USER -p $DOCKER_PASS
 
-if [ $CIRCLE_BRANCH = master ] || [ $CIRCLE_BRANCH = preview-image ]
+if [ $CIRCLE_BRANCH = main ] || [ $CIRCLE_BRANCH = preview-image ]
 then
     docker build --build-arg skip_dev_deps=true -t redash/redash:preview -t redash/preview:$VERSION_TAG .
     docker push redash/redash:preview

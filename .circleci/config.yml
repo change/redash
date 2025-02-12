@@ -110,9 +110,9 @@ jobs:
           version: 19.03.13
       - checkout
       - run:
-          name: Enable Code Coverage report for master branch
+          name: Enable Code Coverage report for main branch
           command: |
-            if [ "$CIRCLE_BRANCH" = "master" ]; then
+            if [ "$CIRCLE_BRANCH" = "main" ]; then
               echo 'export CODE_COVERAGE=true' >> $BASH_ENV
               source $BASH_ENV
             fi
@@ -167,7 +167,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
       - hold:
           type: approval
           requires:

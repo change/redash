@@ -6,7 +6,7 @@ import subprocess
 
 
 def get_change_log(previous_sha):
-    args = ['git', '--no-pager', 'log', '--merges', '--grep', 'Merge pull request', '--pretty=format:"%h|%s|%b|%p"', 'master...{}'.format(previous_sha)]
+    args = ['git', '--no-pager', 'log', '--merges', '--grep', 'Merge pull request', '--pretty=format:"%h|%s|%b|%p"', 'main...{}'.format(previous_sha)]
     log = subprocess.check_output(args)
     changes = []
 
